@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo Energético MVG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="imagens/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #e0e0e0; /* Cinza claro */
+            color: black;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #001e54;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3eeefd;
+        }
+
+        .section {
+            padding: 40px 60px;
+            text-align: center;
+        }
+
+        .section img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .hero {
+            position: relative;
+            text-align: center;
+            background: url('imagens/inicial.png') no-repeat center center/cover;
+            color: white;
+            padding: 190px 56px;
+        }
+
+        .hero .content {
+            background-color: rgba(255, 255, 255, 0.123);
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px); /* Efeito de desfoque gaussiano */
+            -webkit-backdrop-filter: blur(10px); /* Suporte para navegadores WebKit */
+        }
+
+        .video-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .video-section iframe {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .two-descriptions {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .two-descriptions .description {
+            background-color: #e0e0e07a;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 600px;
+            backdrop-filter: blur(10px); /* Efeito de desfoque gaussiano */
+            -webkit-backdrop-filter: blur(10px); /* Suporte para navegadores WebKit */
+        }
+
+        .image-with-description {
+            text-align: center;
+        }
+
+        .image-with-description img {
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .description-and-images {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .description-and-images .images {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .description-and-images .images img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .title-and-descriptions {
+            text-align: center;
+        }
+
+        footer {
+            background-color: #001e54;
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        footer .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        footer .social-buttons a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: #333;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        footer .social-buttons a:hover {
+            background-color: #555;
+        }
+
+        /* Botão flutuante do WhatsApp */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            font-size: 30px;
+            z-index: 1000;
+        }
+
+        .whatsapp-button:hover {
+            background-color: #20b954;
+        }
+
+        /* Estilos para intercalar as cores de fundo das seções */
+        .section-1 {
+            background-color: #001e54;
+            color: white;
+        }
+
+        .section-2 {
+            background: linear-gradient(to right, #001e54, #0196d8);
+            color: white;
+        }
+
+        .section-3 {
+            background-color: #001e54;
+            color: white;
+        }
+
+        .section-4 {
+            background: linear-gradient(to right, #001e54, #0196d8);
+            color: white;
+        }
+
+        .section-5 {
+            background-color: #001e54;
+            color: white;
+        }
+
+        .section-6 {
+            background: linear-gradient(to right, #001e54, #0196d8);
+            color: white;
+        }
+
+        .section-7 {
+            background-color: #001e54;
+            color: white;
+        }
+
+        /* Media queries para responsividade */
+        @media (min-width: 768px) {
+            .video-section {
+                flex-direction: row;
+            }
+
+            .two-descriptions {
+                flex-direction: row;
+            }
+
+            .description-and-images {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="imagens/logo.png" alt="Sua Logo" style="max-width: 100px;">
+        </div>
+    </header>
+
+    <section id="apresentacao" class="hero section-1">
+        <div class="content">
+            <h1>Bem-vindo ao</h1>
+            <h1>Grupo Energético MVG</h1>
+            <p>Conectando você ao futuro</p>
+            <p>da energia sustentável!.</p>
+        </div>
+    </section>
+    
+    <section class="section balloons-section">
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+            <div class="balloon" style="flex: 1; min-width: 200px; display: flex; justify-content: space-between; align-items: center; padding: 45px; background-color: #f0f0f0; border-radius: 10px;">
+                <p style="margin: 0;">Economia de quase dois meses de consumo ao ano</p>
+                <img src="imagens/save-money.png" alt="Ícone 1" style="width: 35px; height: 35px;">
+            </div>
+            <div class="balloon" style="flex: 1; min-width: 200px; display: flex; justify-content: space-between; align-items: center; padding: 45px; background-color: #f0f0f0; border-radius: 10px;">
+                <p style="margin: 0;">Sem aquisição de painéis solares</p>
+                <img src="imagens/solar-panel.png" alt="Ícone 2" style="width: 35px; height: 35px;">
+            </div>
+            <div class="balloon" style="flex: 1; min-width: 200px; display: flex; justify-content: space-between; align-items: center; padding: 45px; background-color: #f0f0f0; border-radius: 10px;">
+                <p style="margin: 0;">Livre de bandeiras tarifárias</p>
+                <img src="imagens/red-flag.png" alt="Ícone 3" style="width: 35px; height: 35px;">
+            </div>
+        </div>
+    </section>
+
+    <section id="video" class="section video-section section-2">
+        <div>
+            <h2>Por que escolher o Grupo Energético MVG?</h2>
+            <p style="text-align: justify;">Economia garantida: Reduza seus custos com energia elétrica por meio da compra de créditos energéticos solares.</p>
+            <p style="text-align: justify;">Sustentabilidade ao alcance: Contribua para um planeta mais verde, utilizando uma fonte de energia limpa e 100% renovável.</p>
+            <p style="text-align: justify;">Soluções personalizadas: Atendemos pequenas empresas e pessoas físicas, tornando a energia solar acessível a todos.</p>
+            <p style="text-align: justify;">Confiança e transparência: Operamos de acordo com as regulamentações do setor, garantindo segurança em cada etapa.</p>
+        </div>
+        <video controls style="width: 100%; max-width: 600px; border-radius: 10px;">
+            <source src="videos/video.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+    </section>
+
+    <section id="descricao" class="section two-descriptions section-3">
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+            <div class="description" style="flex: 1; min-width: 200px;">
+                <h3>Adesão</h3>
+                <p>O Grupo MVG migra sua conta de energia para um de nossos parceiros geradores, com taxa administrativa única, cobrada apenas na primeira fatura com desconto.</p>
+            </div>
+            <div class="description" style="flex: 1; min-width: 200px;">
+                <h3>Conexão</h3>
+                <p>Ligamos você a produtores de energia solar de forma prática e eficiente.</p>
+            </div>
+            <div class="description" style="flex: 1; min-width: 200px;">
+                <h3>Economia</h3>
+                <p>Comece a economizar enquanto contribui para um futuro sustentável.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section image-with-description section-4">
+        <h2>Nosso Processo</h2>
+        <p>o Grupo Energético MVG, busca facilitar a transição para a energia solar.</p> 
+        <p>    Analisamos as necessidades de cada cliente e conectamos com produtores de</p> 
+        <p> energia solar para a compra e venda de créditos energéticos. Nosso objetivo</p> 
+        <p> é tornar o processo simples e acessível, oferecendo suporte constante para</p> 
+        <p>garantir que todos aproveitem os benefícios da energia solar.</p>
+    </section>
+
+    <section class="section description-and-images section-5">
+        <div>
+            <h2>Porque escolher a MVG?</h2>
+            <p>quem compara escolhe a MVG</p>
+            <p>com o investimento pago logo no primeiro desconto</p>
+        </div>
+        <div class="images">
+            <img src="imagens/modelo1.png" alt="">
+            <img src="imagens/modelo2.png" alt="">
+        </div>
+    </section>
+   
+    <footer>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 20px 40px; background-color: #001e54; color: white;">
+            <div class="logo" style="flex: 1; text-align: left; min-width: 150px;">
+                <img src="imagens/logo.png" alt="Sua Logo" style="max-width: 100px;">
+            </div>
+            <div style="flex: 2; text-align: center; min-width: 200px;">
+                <div class="social-buttons" style="margin-bottom: 10px; display: flex; justify-content: center; gap: 10px;">
+                    <a href="https://www.instagram.com/grupoenergeticomvg/" target="_blank" class="fab fa-instagram" style="color: #ffffff;"></a>
+                    <a href="wa.me/+5544988415455" target="_blank" class="fab fa-whatsapp" style="color: #ffffff;"></a>
+                    <a href="mailto:grupoenergeticomvg@gmail.com" target="_blank" class="fas fa-envelope" style="color: #ffffff;"></a>
+                </div>
+                <p>Contato: (44) 98841-5455 | grupoenergeticomvg@gmail.com</p>
+            </div>
+            <div style="flex: 1; text-align: right; min-width: 150px;">
+                <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; align-items: flex-end;">
+                    <li><a href="" style="color: white; text-decoration: none; margin-bottom: 10px;">Polo MS</a></li>
+                    <li><a href="" style="color: white; text-decoration: none; margin-bottom: 10px;">Polo MG</a></li>
+                    <li><a href="" style="color: white; text-decoration: none; margin-bottom: 10px;">Polo SC</a></li>
+                    <li><a href="" style="color: white; text-decoration: none; margin-bottom: 10px;">Polo RS</a></li>
+                </ul>
+            </div>
+        </div>
+        <p style="text-align: center; margin: 10px 0;">&copy; 2025. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="wa.me/+5544988415455" class="whatsapp-button" target="_blank"><i class="fab fa-whatsapp"></i></a>
+</body>
+</html>
